@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVERYBODY CAN'T GO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- Title Screen -->
+        <div id="titleScreen" class="screen active">
+            <div class="title-content">
+                <h1 class="game-title">EVERYBODY CAN'T GO</h1>
+                <p class="subtitle">A One-Button Run</p>
+                
+                <div class="controls-info">
+                    <p class="control-row"><span class="key">SPACE</span> / <span class="key">W</span> / <span class="key">↑</span> — JUMP</p>
+                    <p class="control-row"><span class="key">ESC</span> — PAUSE</p>
+                    <p class="control-row">TOUCH/CLICK — JUMP (MOBILE)</p>
+                </div>
+                
+                <div class="high-score-display">
+                    <p>HIGH SCORE: <span id="titleHighScore">0</span></p>
+                </div>
+                
+                <p class="start-prompt">PRESS SPACE TO START</p>
+            </div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="screen-content">
+                <h2>GAME OVER</h2>
+                <div class="game-over-stats">
+                    <p>DISTANCE: <span id="finalDistance">0</span></p>
+                    <p>SCORE: <span id="finalScore">0</span></p>
+                    <p>HIGH SCORE: <span id="finalHighScore">0</span></p>
+                </div>
+                <p class="restart-prompt">PRESS SPACE TO RESTART</p>
+            </div>
+        </div>
+        
+        <!-- Victory Screen -->
+        <div id="victoryScreen" class="screen">
+            <div class="screen-content">
+                <h2>YOU MADE IT!</h2>
+                <div class="victory-stats">
+                    <p>DISTANCE: <span id="victoryDistance">0</span></p>
+                    <p>SCORE: <span id="victoryScore">0</span></p>
+                    <p class="new-record" id="newRecord"></p>
+                </div>
+                <p class="restart-prompt">PRESS SPACE TO PLAY AGAIN</p>
+            </div>
+        </div>
+        
+        <!-- Pause Screen -->
+        <div id="pauseScreen" class="screen">
+            <div class="screen-content">
+                <h2>PAUSED</h2>
+                <p>PRESS ESC TO RESUME</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- HUD (during gameplay) -->
+    <div id="hud" class="hud">
+        <div class="hud-left">
+            <div class="hud-item">SCORE: <span id="scoreValue">0</span></div>
+            <div class="hud-item">HIGH: <span id="highScoreValue">0</span></div>
+        </div>
+        <div class="hud-center">
+            <div class="hud-item">DISTANCE: <span id="distanceValue">0</span>M</div>
+        </div>
+        <div class="hud-right">
+            <div class="hud-item" id="pauseIndicator">ESC TO PAUSE</div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
