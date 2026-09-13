@@ -52,7 +52,7 @@ canvas#gameCanvas {
 
 /* Title Screen */
 #titleScreen {
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #000 0%, #0a0a0a 100%);
 }
 
 .title-content {
@@ -66,58 +66,70 @@ canvas#gameCanvas {
     font-weight: bold;
     letter-spacing: 3px;
     margin-bottom: 20px;
-    text-shadow: 3px 3px 0px #555;
+    text-shadow: 4px 4px 0px #333, -1px -1px 0px #222;
     text-transform: uppercase;
     line-height: 1.2;
+    color: #fff;
 }
 
 .subtitle {
     font-size: 1.5rem;
     margin-bottom: 40px;
     font-style: italic;
-    color: #ccc;
+    color: #ddd;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 0px #333;
 }
 
 .controls-info {
     margin: 40px 0;
     padding: 20px;
-    border: 2px solid #666;
-    background-color: #111;
+    border: 3px solid #888;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
 .control-row {
-    font-size: 0.9rem;
-    margin: 8px 0;
+    font-size: 0.95rem;
+    margin: 10px 0;
     letter-spacing: 1px;
+    color: #ddd;
+    font-weight: 500;
 }
 
 .key {
     display: inline-block;
-    padding: 4px 8px;
-    border: 1px solid #888;
-    background-color: #222;
+    padding: 6px 10px;
+    border: 2px solid #aaa;
+    background-color: #333;
     font-weight: bold;
     margin: 0 4px;
+    color: #fff;
+    box-shadow: inset 0 -2px 0 #222;
 }
 
 .high-score-display {
     margin: 30px 0;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    color: #aaa;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px #333;
 }
 
 .start-prompt {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-top: 40px;
     letter-spacing: 2px;
     animation: blink 1s infinite;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #333;
 }
 
 @keyframes blink {
     0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
+    51%, 100% { opacity: 0.4; }
 }
 
 /* Screen Content */
@@ -125,48 +137,62 @@ canvas#gameCanvas {
     text-align: center;
     max-width: 500px;
     padding: 40px;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 3px solid #666;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.95);
 }
 
 .screen-content h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    text-shadow: 2px 2px 0px #555;
+    text-shadow: 3px 3px 0px #444;
+    color: #fff;
+    font-weight: bold;
 }
 
 .game-over-stats,
 .victory-stats {
-    background-color: #111;
-    border: 2px solid #666;
+    background-color: #1a1a1a;
+    border: 3px solid #777;
     padding: 30px;
     margin: 30px 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     letter-spacing: 1px;
+    color: #fff;
+    font-weight: 500;
 }
 
 .game-over-stats p,
 .victory-stats p {
-    margin: 10px 0;
+    margin: 12px 0;
+    text-shadow: 1px 1px 0px #222;
 }
 
 .new-record {
-    color: #888;
+    color: #aaa;
     font-style: italic;
     margin-top: 15px;
+    font-weight: normal;
 }
 
 .new-record.highlight {
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 0px #333;
 }
 
 .restart-prompt {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-top: 30px;
     letter-spacing: 2px;
     animation: blink 1s infinite;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #333;
 }
 
 /* HUD */
@@ -179,13 +205,15 @@ canvas#gameCanvas {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     letter-spacing: 1px;
-    color: #aaa;
+    color: #fff;
     z-index: 500;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
 }
 
 .hud.visible {
@@ -206,8 +234,17 @@ canvas#gameCanvas {
 
 .hud-item {
     text-transform: uppercase;
-    padding: 5px 10px;
-    border-bottom: 1px solid #555;
+    padding: 8px 12px;
+    border: 2px solid #666;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hud-item span {
+    color: #fff;
+    font-weight: bold;
 }
 
 /* Responsive */
@@ -221,11 +258,12 @@ canvas#gameCanvas {
     }
     
     .controls-info {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        border: 2px solid #666;
     }
     
     .hud {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
         padding: 0 20px;
     }
     
@@ -235,7 +273,7 @@ canvas#gameCanvas {
     }
     
     .screen-content h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 }
 
@@ -251,6 +289,7 @@ canvas#gameCanvas {
     .controls-info {
         font-size: 0.7rem;
         padding: 15px;
+        border: 2px solid #555;
     }
     
     .control-row {
@@ -262,6 +301,7 @@ canvas#gameCanvas {
         top: 10px;
         padding: 10px;
         gap: 5px;
+        font-size: 0.75rem;
     }
     
     .hud-left,
@@ -274,5 +314,10 @@ canvas#gameCanvas {
         position: static;
         transform: none;
         margin-top: 5px;
+    }
+    
+    .hud-item {
+        font-size: 0.7rem;
+        padding: 5px 8px;
     }
 }
